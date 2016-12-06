@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var BlogPosts = require('../content_delivery/blogPosts.js');
+var ContentDeliverer = require('../content_delivery/contentDeliverer.js');
 
 router.get('/', function(req, res) {
-	var blogPosts = new BlogPosts();
-	blogPosts.getBlogPosts(function(data) {
+	var content = new ContentDeliverer();
+	content.getBlogPosts(function(data) {
 		res.render('home', 
 			{ posts: JSON.parse(data) }
 		);
