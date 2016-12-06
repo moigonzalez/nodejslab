@@ -1,0 +1,23 @@
+{
+  "name": "nodejslab",
+  "version": "1.0.0",
+  "description": "NodeJs lab getting info from Drupal based site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moigonzalez/nodejslab.git"
+  },
+  "author": "Moises Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moigonzalez/nodejslab/issues"
+  },
+  "homepage": "https://github.com/moigonzalez/nodejslab#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "twig": "^0.10.2"
+  }
+}
