@@ -1,10 +1,15 @@
-var http = require('http');
+var express = require('express');
 var settings = require('./settings');
+var routes = require('./routes/router');
 
-var myServer = http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type" : "text/html"});
-  response.write(" Hello Test Node");
-  response.end();
+var app = express();
+
+app.set('view engine', 'twig');
+
+app.set("twig options", {
+    strict_variables: false
 });
 
-myServer.listen(settings.PORT);
+var server = app.listen(settings.PORT);
+
+app.use(routes);
