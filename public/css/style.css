@@ -1,3 +1,23 @@
+@import 'bootstrap-flex.min.css';
+@import 'bootstrap-grid.min.css';
+@import 'bootstrap-reboot.min.css';
+@import 'bootstrap.min.css';
+
+.hero {
+	text-align: center;
+}
+
+.dat-boi:before {
+	content: '';
+	height: 300px;
+	width: 230px;
+	display: block;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center center;
+	background-image: url('../images/dat_boi.gif');
+}
+
 [data-el-ajax] {
 	opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out; /* Safari */

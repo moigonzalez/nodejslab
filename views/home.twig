@@ -3,9 +3,13 @@
 {% include 'partials/header.twig' %}
 <body>
 
-	<h1>waddup</h1>
+	<div class="hero jumbotron">
+		<div class="container">
+			<h1 class="dat-boi">waddup</h1>
+		</div>
+	</div>
 
-	<section data-el-ajax="blogposts">
+	<section class="container" data-el-ajax="blogposts">
 		<input id="rendered_posts_ep" type="hidden" value="{{rendered_posts_ep}}"> 
 		{% include 'partials/blogposts.twig' %}
 	</section>
