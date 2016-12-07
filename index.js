@@ -11,10 +11,13 @@ app.set("twig options", {
 });
 
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
-
 app.use('/twig', express.static(__dirname + '/node_modules/twig/'));
-
 app.use(express.static(__dirname + '/public'));
+
+app.use(function(req, res, next){
+	res.locals.static_files_prefix = settings.STATIC_FILES_PREFIX;
+	next();
+});
 
 var server = app.listen(settings.PORT);
 
