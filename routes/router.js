@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var ContentDeliverer = require('../content_delivery/contentDeliverer.js');
-var ContentRenderer = require('../content_delivery/ContentRenderer.js');
+var ContentRenderer = require('../content_delivery/contentRenderer.js');
 
 router.get('/', function(req, res) {
 	res.render('home');
