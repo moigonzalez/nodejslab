@@ -18,6 +18,8 @@
   "homepage": "https://github.com/moigonzalez/nodejslab#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "install": "^0.8.2",
+    "jquery": "^3.1.1",
     "twig": "^0.10.2"
   }
 }
