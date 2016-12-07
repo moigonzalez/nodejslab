@@ -1,13 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var ContentDeliverer = require('../content_delivery/contentDeliverer.js');
+var ContentRenderer = require('../content_delivery/ContentRenderer.js');
 
 router.get('/', function(req, res) {
+	res.render('home');
+});
+
+router.get('/ajax/blogposts', function (req, res) {
 	var content = new ContentDeliverer();
+	var renderedContent = new ContentRenderer();
 	content.getBlogPosts(function(data) {
-		res.render('home', 
-			{ posts: JSON.parse(data) }
-		);
+		renderedContent.renderBlogPosts(data, function (html) {
+			res.send(html);
+		});
 	});
 });
 
