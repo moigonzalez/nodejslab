@@ -1,7 +1,9 @@
 (function () {
-
+	
+	var RENDERED_POSTS_EP = $('#rendered_posts_ep').val();
+	
 	$.ajax({
-		url: "ajax/blogposts",
+		url: RENDERED_POSTS_EP,
 		success: function (data) {
 			appendBlogPosts(data);
 		},
