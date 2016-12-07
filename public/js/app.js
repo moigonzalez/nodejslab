@@ -12,9 +12,7 @@
 
 	function appendBlogPosts(html) {
 		var SELECTOR = $('[data-el-ajax="blogposts"]');
-		SELECTOR.css({'opacity': '0'});
-		SELECTOR.html(html);
-		SELECTOR.css({'opacity': '1'});
+		SELECTOR.html(html).addClass('show');
 	}
 
 })();
