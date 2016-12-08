@@ -16,7 +16,9 @@
 
 	function appendBlogPosts(html) {
 		var SELECTOR = $('[data-el-ajax="blogposts"]');
-		SELECTOR.html(html).addClass('show');
+		SELECTOR.addClass('s-hidden').html(html);
+		setTimeout(function () {
+			SELECTOR.removeClass('s-hidden');
+		}, 300);
 	}
-
 })();

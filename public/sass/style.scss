@@ -1,0 +1,66 @@
+@import '../rsc/bootstrap-flex.min.css';
+@import '../rsc/bootstrap-grid.min.css';
+@import '../rsc/bootstrap-reboot.min.css';
+@import '../rsc/bootstrap.min.css';
+@import '../rsc/mixins.scss';
+
+@include keyframes(glow) {
+  0%   { opacity: 1; }
+  20%   { opacity: 0.75; }
+  40%   { opacity: 0.50; }
+  60%   { opacity: 0.40; }
+  80%   { opacity: 0.50; }
+  100% { opacity: 0.75; }
+}
+
+.hero {
+	text-align: center;
+}
+
+.dat-boi:before {
+	content: '';
+	height: 300px;
+	width: 230px;
+	display: block;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center center;
+	background-image: url('../images/dat_boi.gif');
+}
+
+[data-el-ajax] {
+	opacity: 1;
+	@include transition(opacity 0.5s ease-in-out);
+
+	&.s-hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.m-placeholder {
+
+	@include animation('glow 1s infinite');
+	& > .a-placeholder--text {
+		margin-top: 15px;
+	}
+}
+
+.a-placeholder--text {
+	display: block;
+	height: 10px;
+	background-color: grey;
+	@for $i from 1 through 10 {
+		&:nth-of-type(#{$i}) {
+			width: random(100) + %;
+		}
+	}
+}
+
+.a-placeholder--title {
+	display: block;
+	height: 20px;
+	background-color: grey;
+	width: random(100) + %;
+	margin-bottom: 30px;
+}
