@@ -19,7 +19,6 @@
 }
 
 [data-el-ajax] {
-	opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out; /* Safari */
     transition: opacity 0.5s ease-in-out;
 }
@@ -27,3 +26,22 @@
 [data-el-ajax].show {
 	opacity: 1;
 }
+
+.m-placeholder > * {
+	margin-top: 15px;
+}
+
+.a-placeholder--text {
+	display: block;
+	height: 10px;
+	background-color: grey;
+	width: 100%;
+}
+
+.a-placeholder--title {
+	display: block;
+	height: 20px;
+	background-color: grey;
+	width: 100%;
+}
+

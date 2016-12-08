@@ -5,12 +5,14 @@
 
 	<div class="hero jumbotron">
 		<div class="container">
-			<h1 class="dat-boi">waddup</h1>
+			<h1 class="dat-boi display-3">moigonz</h1>
+			<small class="text-muted">This part of the website runs on NodeJS</small>
 		</div>
 	</div>
 
 	<section class="container" data-el-ajax="blogposts">
-		<input id="rendered_posts_ep" type="hidden" value="{{rendered_posts_ep}}"> 
+		<input id="rendered_posts_ep" type="hidden" value="{{rendered_posts_ep}}">
+		{% include 'placeholders/text.twig' %}
 		{# {% include 'partials/blogposts.twig' %} #}
 	</section>
 

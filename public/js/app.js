@@ -7,7 +7,7 @@
 		success: function (data) {
 			setTimeout(function () {
 				appendBlogPosts(data);
-			}, 200);
+			}, 3000);
 		},
 		error: function (req, status, err) {
 			console.log(req, status, err);
