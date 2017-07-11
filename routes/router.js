@@ -17,14 +17,13 @@ router.get('/ajax/blogposts', function (req, res) {
 	});
 });
 
-router.get('/ajax/blogpost/%', function (req, res) {
+router.get('/ajax/blogpost/:nid', function (req, res) {
 	var content = new ContentDeliverer();
 	var renderedContent = new ContentRenderer();
-	content.getBlogPost(function(data) {
-		
-		// renderedContent.renderBlogPosts(data, function (html) {
-		// 	res.send(html);
-		// });
+	content.getBlogPost(req.params.nid, function(data) {
+		renderedContent.renderBlogPost(data, function (html) {
+			res.send(html);
+		});
 	});
 });
 

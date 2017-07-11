@@ -1,5 +1,5 @@
 {% for post in posts %}
-	<a data-target-nid="{{post.nid}}" href="http:/{{post.path}}">
+	<a data-el-ajax-single-blogpost="{{post.nid}}" href="http:/{{post.path}}">
 		<h2> {{ post.title }} </h2>
 	</a>
 	<div> {{ post.body }} </div>

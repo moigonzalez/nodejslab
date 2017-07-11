@@ -32,8 +32,21 @@
 	}
 
 	function openSingleBlogPost() {
-		$('[data-target-nid]').on('click', (e) => {
+		$('[data-el-ajax-single-blogpost]').on('click', (e) => {
 			e.preventDefault();
+			getSingleBlogPost($(e.currentTarget).attr('data-el-ajax-single-blogpost'));
+		});
+	}
+
+	function getSingleBlogPost(nid) {
+		$.ajax({
+			url: `/ajax/blogpost/{nid}`,
+			success: function (data) {
+				console.log(data);
+			},
+			error: function (req, status, err) {
+				console.log(req, status, err);
+			}
 		});
 	}
 
