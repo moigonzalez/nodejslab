@@ -11,7 +11,7 @@
 				setTimeout(function () {
 					appendBlogPosts(data);
 					addEventListeners();
-				}, 1000);
+				}, 100);
 			},
 			error: function (req, status, err) {
 				console.log(req, status, err);
@@ -41,11 +41,20 @@
 
 
 	function getSingleBlogPost(nid) {
+
+		if ($('#modal-nid-' + nid).length > 0) {
+			$('#modal-nid-' + nid).modal('show');
+			return;
+		}
+
 		$.ajax({
 			url: '/ajax/blogpost/' + nid,
 			success: function (data) {
 				var insertedModal = $('body').append(data);
-				$('#modal-nid-' + nid).modal();
+				$('#modal-nid-' + nid).modal('show');
+				$('#modal-nid-' + nid).find('[data-dismiss]').on('click', function(e) {
+					$('#modal-nid-' + nid).modal('hide');
+				})
 			},
 			error: function (req, status, err) {
 				console.log(req, status, err);
