@@ -19,6 +19,7 @@
 		});
 	}
 
+
 	function appendBlogPosts(html) {
 		var SELECTOR = $('[data-el-ajax="blogposts"]');
 		SELECTOR.addClass('s-hidden').html(html);
@@ -32,17 +33,19 @@
 	}
 
 	function openSingleBlogPost() {
-		$('[data-el-ajax-single-blogpost]').on('click', (e) => {
+		$('[data-el-ajax-single-blogpost]').on('click', function(e) {
 			e.preventDefault();
 			getSingleBlogPost($(e.currentTarget).attr('data-el-ajax-single-blogpost'));
 		});
 	}
 
+
 	function getSingleBlogPost(nid) {
 		$.ajax({
-			url: `/ajax/blogpost/{nid}`,
+			url: '/ajax/blogpost/' + nid,
 			success: function (data) {
-				console.log(data);
+				var insertedModal = $('body').append(data);
+				$('#modal-nid-' + nid).modal();
 			},
 			error: function (req, status, err) {
 				console.log(req, status, err);
