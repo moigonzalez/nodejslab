@@ -8,13 +8,10 @@ module.exports = {
 	IP: function () {
 		return '127.0.0.1';
 	}(),
-	STATIC_FILES_PREFIX: function () {
-		return '/';
-	}(),
-	RENDERED_POSTS_EP: function () {
-		return '/ajax/blogposts';
-	}(),
 	BLOG_POSTS_EP: function () {
-		return 'http://localhost:8888/moigonz.com/blogposts';
+		return 'http://localhost:8888/moigonz.com/blogposts/';
+	}(),
+	BLOG_POST_EP: function () {
+		return 'http://localhost:8888/moigonz.com/blogpost/';
 	}()
 };

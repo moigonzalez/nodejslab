@@ -9,4 +9,11 @@ ContentRenderer.prototype.renderBlogPosts = function(content, callback) {
 	});
 }
 
+ContentRenderer.prototype.renderBlogPost = function(content, callback) {
+	var data = JSON.parse(content);
+	twig.renderFile('views/modals/blogpost.twig', {post: data}, function (err, html) {
+		return callback(html);
+	});
+}
+
 module.exports = ContentRenderer;

@@ -9,4 +9,10 @@ ContentDeliverer.prototype.getBlogPosts = function (callback) {
 	});
 };
 
+ContentDeliverer.prototype.getBlogPost = function (postId, callback) {
+	request(settings.BLOG_POST_EP + postId, function (error, response, body) {
+		return callback(body);
+	});
+};
+
 module.exports = ContentDeliverer;

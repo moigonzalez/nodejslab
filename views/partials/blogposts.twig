@@ -1,4 +1,6 @@
 {% for post in posts %}
-	<h2> {{ post.title }} </h2>
+	<a data-el-ajax-single-blogpost="{{post.nid}}" href="http:/{{post.path}}" data-toggle="modal" data-target="#modal-nid-{{post.nid}}">
+		<h2> {{ post.title }} </h2>
+	</a>
 	<div> {{ post.body }} </div>
 {% endfor %}
