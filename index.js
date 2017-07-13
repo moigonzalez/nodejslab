@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(function (req, res, next) {
     if (req.url.match(/^\/(css|js|img|font)\/.+/)) {
-        res.setHeader('Cache-Control', 'public, max-age=3600'))
+        res.setHeader('Cache-Control', 'public, max-age=3600');
     }
     next();
 });
