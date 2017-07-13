@@ -14,6 +14,13 @@ app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use('/twig', express.static(__dirname + '/node_modules/twig/'));
 app.use(express.static(__dirname + '/public'));
 
+app.use(function (req, res, next) {
+    if (req.url.match(/^\/(css|js|img|font)\/.+/)) {
+        res.setHeader('Cache-Control', 'public, max-age=3600'))
+    }
+    next();
+});
+
 var server = app.listen(settings.PORT);
 
 app.use(routes);
