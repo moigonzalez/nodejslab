@@ -6,11 +6,17 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
 var sassFiles = 'public/sass/**/*.scss';
-var rscFolder = 'public/rsc/**/*.scss';
+var rscFolderCss = 'public/rsc/**/*.scss';
 var cssDest = 'public/css/';
 
 var jsFiles = 'public/js/**/*.js';
+var rscFolderJs = 'public/rsc/**/*.js';
 var jsDest = 'public/dist/';
+
+var jsDependencies = ['/jquery/jquery.js',
+						'/twig/twig.js',
+						'/rsc/tether.min.js',
+						'/rsc/bootstrap.min.js'];
 
 gulp.task('scripts', function(){  
 	gulp.src(jsFiles)
@@ -32,7 +38,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('watch-styles', function() {
-	gulp.watch([sassFiles, rscFolder], ['styles']);
+	gulp.watch([sassFiles, rscFolderCss], ['styles']);
 });
 
 gulp.task('watch-scripts', function() {
